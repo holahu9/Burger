@@ -1,0 +1,75 @@
+<div class="container">
+  <h1 class="text-center text-white">Eat-Da-Burger!</h1>
+  <div class="row justify-content-center">
+    <img class="image" src="./assets/img/mac.jpg"></img>
+    <img class="image1" src="./assets/img/mac1.jpg"></img>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <form class="text-center" id="create-form">
+      <h2 class="text-center">Hungry? Order Here !</h2>
+      <h6 class="text-center">Search Your Burger ...</h6>
+      <div class="form-group">
+        <input type="text" id="bu" name="name">
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <br>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="card bg-transparent border-white">
+        <div class="card-title text-center">
+          <h2 class="text-white">Good Meal!</h2>
+        </div>
+        <div class="card-body">
+          <!-- if all burgers devoured, then none left in left column - display 'all gone' -->
+          {{#if eaten}}
+          <h4 class="text-white">All gone!</h4>
+          {{/if}}
+          <!-- if burgers available, then loop and fill in information for list -->
+          <ul class="no-bullets">
+            {{#each burgers}}
+            {{#unless devoured}}
+            {{> burgers/burger-order devour=true}}
+            {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+      <div class="card cardBorder bg-transparent">
+        <div class="card-title text-center" style="display: hidden">
+          <h2 class="text-white" style="visibility: hidden">Good Eating!</h2>
+        </div>
+        <div class="card-body">
+          <!-- if burgers availabe, then loop and display the Eat Me icons for each availabe burger -->
+          <ul class="no-bullets">
+            {{#each burgers}}
+            {{#unless devoured}}
+            {{> burgers/burger-devoured devour=false}}
+            {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+      <div class="card bg-transparent border-white">
+        <div class="card-title text-center">
+          <h2 class="text-white">Already Devoured!</h2>
+        </div>
+        <div class="card-body">
+          <!-- if no burgers available, then loop and fill in information for devoured list -->
+          <ul class="no-bullets">
+            {{#each burgers}}
+            {{#if devoured}}
+            {{> burgers/burger-order devoured=false}}
+            {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
