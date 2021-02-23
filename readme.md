@@ -30,7 +30,7 @@ To execute this application, perform the following command:
 
 ## Output
 * The following link shows html file generated with this app
- Direct Link: 
+ Direct Link: https://tranquil-beyond-49184.herokuapp.com/
 
 ## Questions
 If there are any questions about this **Burger** application, then please feel
