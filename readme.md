@@ -31,6 +31,8 @@ To execute this application, perform the following command:
 ## Output
 * The following link shows html file generated with this app
  Direct Link: https://tranquil-beyond-49184.herokuapp.com/
+ 
+ ![Screen Shot 2021-02-22 at 11 12 18 PM](https://user-images.githubusercontent.com/70487513/108801369-8a73f780-7563-11eb-9a46-f5d9a5a6dfc3.png)
 
 ## Questions
 If there are any questions about this **Burger** application, then please feel
