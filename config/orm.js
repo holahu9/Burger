@@ -1,4 +1,4 @@
-// Import MySQL connection.
+/// Import MySQL connection.
 const connection = require('./connection.js');
 
 // Helper function for SQL syntax to add question marks (?, ?, ?) in query
@@ -21,11 +21,11 @@ const objToSql = (ob) => {
     let value = ob[key];
     // Check to skip hidden properties
     if (Object.hasOwnProperty.call(ob, key)) {
-      // If string with spaces, add quotations (Bacon Cheeseburger => 'Bacon Cheeseburger')
+      // If string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
       if (typeof value === 'string' && value.indexOf(' ') >= 0) {
         value = `'${value}'`;
       }
-      // e.g. {name: 'Bacon Cheeseburger'} => ["name='Bacon Cheeseburger'"]
+      // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
       // e.g. {sleepy: true} => ["sleepy=true"]
       arr.push(`${key}=${value}`);
     }
@@ -43,6 +43,7 @@ const orm = {
       if (err) {
         throw err;
       }
+      // return the result in the callback
       cb(result);
     });
   },
@@ -56,13 +57,11 @@ const orm = {
     queryString += printQuestionMarks(vals.length);
     queryString += ') ';
 
-    console.log(queryString);
-
     connection.query(queryString, vals, (err, result) => {
       if (err) {
         throw err;
       }
-
+      // return the result in the callback
       cb(result);
     });
   },
@@ -75,29 +74,15 @@ const orm = {
     queryString += ' WHERE ';
     queryString += condition;
 
-    console.log(queryString);
     connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
       }
-
-      cb(result);
-    });
-  },
-  delete(table, condition, cb) {
-    let queryString = `DELETE FROM ${table}`;
-    queryString += ' WHERE ';
-    queryString += condition;
-
-    connection.query(queryString, (err, result) => {
-      if (err) {
-        throw err;
-      }
-
+      // return result in the callback
       cb(result);
     });
   },
 };
 
-// Export the orm object for the model (burgers.js).
+// Export the orm object for the model 
 module.exports = orm;

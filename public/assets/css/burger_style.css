@@ -1,0 +1,85 @@
+li {
+    padding: 5px;
+    margin: 5px;
+    background: white;
+  }
+  
+  .label {
+    font-weight: bold;
+    color: white;
+  }
+  
+  #create-form {
+    color: white;
+    padding: 5px;
+    margin: 5px;
+  /*  background-color: rgb(56, 27, 4)*/
+    background-color: rgb(48, 40, 32);
+  }
+  
+  .form-group {
+    margin-bottom: 5px;
+  }
+
+/* size burger image */
+  .banner {
+    width: 200%;
+    height: auto;
+    max-height: 460px;
+}
+
+/* remove bullets from un-ordered list */
+ul.no-bullets {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+/* change color of background of page */
+body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  /*background: rgb(78, 66, 78);*/
+  background-image: url(../img/bur.jpg);
+  opacity: 80%;
+  padding: 30px 30px;
+  width: 60%;
+  /*background: rgba(255,255,255,0.04);*/
+  box-shadow: -1px 4px 28px 0px rgba(134, 71, 153, 0.75);
+  border-radius: 20px;
+  box-shadow: 0 15px 25px rgb(206, 120, 120);
+ 
+}
+ /* change cursor to indicate button when hovering over Eat Me image*/
+ img:hover {
+  cursor: pointer;
+}
+
+/* remove card borders */
+.cardBorder {
+  border: none;
+  
+}
+
+button{
+  padding:5px 5px;
+  font-size: x-large;
+  background-color:#b63a3a ;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  outline:none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.container-fluid{
+  background-color: rgb(46, 43, 68);
+  border: none;
+}
+
+.card-title h2{
+color:red;
+}
