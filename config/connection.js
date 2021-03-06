@@ -8,10 +8,10 @@ if(process.env.JAWSDB_URL) {
 else {
   // if local then set connection as follows
   connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'burgers_db',
+    host: 'sql5.freemysqlhosting.net',
+    user: 'sql5397080',
+    password: 'wDuiLJJjd6',
+    database: 'sql5397080',
   });
 }
 
